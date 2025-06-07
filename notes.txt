@@ -1,1 +1,3 @@
 Coding Jitsu - Better auth
+Google Cloud Console - Authorized redirect URI
+  - Add additional URI - https://productiondomain/api/auth/callback/google
