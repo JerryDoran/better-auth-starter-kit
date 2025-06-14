@@ -16,6 +16,8 @@ export async function signUp(prevState: State, formData: FormData) {
     lastName: formData.get('lastname') as string,
   };
 
+  console.log('rawFormData', rawFormData);
+
   const { email, password, firstName, lastName } = rawFormData;
 
   try {
