@@ -1,6 +1,7 @@
 'use server';
 
 import { auth } from '@/lib/auth';
+import db from '@/lib/db';
 import { APIError } from 'better-auth/api';
 import { redirect } from 'next/navigation';
 
@@ -84,4 +85,14 @@ export async function signIn(prevState: State, formData: FormData) {
   }
 
   redirect('/dashboard');
+}
+
+export async function searchAccount(email: string) {
+  const user = await db.user.findUnique({
+    where: {
+      email,
+    },
+  });
+  // turn the user object into a boolean
+  return !!user;
 }
