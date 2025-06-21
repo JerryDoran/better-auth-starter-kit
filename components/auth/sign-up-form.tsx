@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { Sign } from 'crypto';
+import SignInSocial from './sign-in-social';
 
 export default function SignUpForm() {
   const initialState = { errorMessage: '' };
@@ -38,14 +40,14 @@ export default function SignUpForm() {
           </div>
 
           <div className='mt-6 grid grid-cols-2 gap-3'>
-            <Button type='button' variant='outline'>
+            <SignInSocial provider='google'>
               <Icons.google />
               <span>Google</span>
-            </Button>
-            <Button type='button' variant='outline'>
+            </SignInSocial>
+            <SignInSocial provider='github'>
               <Icons.gitHub />
               <span>GitHub</span>
-            </Button>
+            </SignInSocial>
           </div>
 
           <hr className='my-4 border-dashed' />

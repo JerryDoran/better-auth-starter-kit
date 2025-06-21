@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
+import SignInSocial from './sign-in-social';
 
 export default function LoginForm() {
   const initialState = { errorMessage: '' };
@@ -39,14 +40,14 @@ export default function LoginForm() {
           </div>
 
           <div className='mt-6 grid grid-cols-2 gap-3'>
-            <Button type='button' variant='outline'>
+            <SignInSocial provider='google'>
               <Icons.google />
               <span>Google</span>
-            </Button>
-            <Button type='button' variant='outline'>
+            </SignInSocial>
+            <SignInSocial provider='github'>
               <Icons.gitHub />
               <span>GitHub</span>
-            </Button>
+            </SignInSocial>
           </div>
 
           <hr className='my-4 border-dashed' />

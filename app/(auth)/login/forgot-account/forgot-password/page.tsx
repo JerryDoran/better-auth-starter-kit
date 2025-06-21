@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { forgetPassword } from '@/lib/auth-client';
-import { set } from 'better-auth';
 
 export default function ForgotPasswordPage() {
   const params = useSearchParams();
@@ -18,7 +17,7 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     const { error } = await forgetPassword({
       email,
-      redirectTo: `${window.location.origin}/login/forgot-account/forget-password/reset-password`,
+      redirectTo: `${window.location.origin}/login/forgot-account/forgot-password/reset-password`,
     });
 
     if (error) {
@@ -34,7 +33,7 @@ export default function ForgotPasswordPage() {
       className='p-6 max-w-md mx-auto space-y-4 container'
       onSubmit={handleSubmit}
     >
-      <h1 className='text-xl font-semibold'>Forget Password</h1>
+      <h1 className='text-xl font-semibold'>Forgot Password</h1>
       <Input
         type='email'
         value={email}
